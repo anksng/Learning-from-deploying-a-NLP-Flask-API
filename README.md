@@ -20,3 +20,4 @@ The idea of this project was to learn steps which are needed to deploy an applic
 
 ## Model outline : 
 
+![](images/flaskmodel.png)
