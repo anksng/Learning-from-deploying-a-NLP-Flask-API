@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Entity detection microservice</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+ <style>
+    a { color: #FF0000; } /* CSS link color */
+    h3 { color: #FF0000; } /* CSS link color */
+  </style>
+</head>
+
+<body>
+ <div class="login" style="width:800px;height:600px;overflow:scroll;overflow-y:scroll;overflow-x:hidden;" align="center"  >
+	<h1>Entity Detection Service</h1>
+     <h3>Scroll down to see the complete results</h3>
+     <!-- Main Input For Receiving Query to our ML -->
+
+
+    <!-- For loop logic of jinja template -->
+       <h2> Text </h2>
+
+         <p>
+         {{ TEXT}}
+     </p>
+     <h2> Results </h2>
+
+     <p>{{RESULTS.to_html() | safe}}</p>
+     <a href="http://127.0.0.1:5000/">Predict new sample</a>
+
+
+ </div>
+
+
+</body>
+</html>
