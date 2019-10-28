@@ -25,7 +25,7 @@ The idea of this project was to learn steps which are needed to deploy an applic
 
 The aim is to deploy the application as a service using Flask and share the working browser application as a running container  of a docker image, hence can be used by a remote client with ease. In doing so, I gained some insights which can be useful in developing such an application from Data Science and Backend perspective which are presented below. <br/>
 
-The three major elements of this application are:
+The three major elements of this application and findings from them are as follows:
 ## **NLP model**
 When the flask application server starts, the first step before ready to render `index.html` is to `initialize` and `load` the pytorch NLP model. Key pointers :
   * Always save the `configuration` used to run training of `model` (which will be used for prediction).  Else loading from `state_dict()` becomes hard if parameters are not saved e.g. `hidden_dim`, `embedding_dim`, `num_layers` etc.
@@ -34,7 +34,7 @@ When the flask application server starts, the first step before ready to render 
   
 ## **Flask app**
 * Learned about how variables from html placeholders can be loaded using `request.form.get('<PLACEHOLDER>)`.
-* Since `model()` is initialized and loaded before the flask-app starts, one app.py can run only one kind of model.
-* To add multiple models into one application, branch out using HTML templates and Flask routes. 
+* Since `model()` is initialized and loaded before the flask-app starts, one app.py can run only one kind of model?
+* To add multiple models into one application, branch out using HTML templates and Flask routes. How to use two or more models within one app?
 ## **Running as a Container - Docker**
 * While creating an image, running `pip install -r requirements.txt` (in `Dockerfile`) leads to a lot of conflicts among dependencies. Learn about practices Engineers use to handle this 
